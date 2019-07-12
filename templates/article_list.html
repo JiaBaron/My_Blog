@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div id="templatemo_main">
+<h2>{{ name }}</h2>
+ {% for article in article_lists %}
+
+    	<div class="cbox_fw1">
+
+        	<h4>{{ article.title }}</h4>
+             <p style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap">{{ article.description }}</p>
+			<a href="/article/{{ article.id }}" class="more float_r"><span>&gt;&gt;</span> 阅读</a>
+            <div class="cleaner"></div>
+        </div>
+{% endfor %}
+         <div class="cleaner"></div>
+
+</div>
+
+{% endblock %}

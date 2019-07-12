@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div id="templatemo_main">
+         <div class="cbox_fw1">
+             <img src="/static/{{ arts.image }}" alt="Image 1" class="image_frame1" />
+             <h4 style="text-align: center">{{ arts.title }}</h4>
+             <p style="text-align: center">{{ arts.author }}&nbsp;&nbsp;&nbsp;&nbsp;阅读数（{{ arts.read_num }}）</p>
+             <span style="font-size: 30px">简述</span>
+             <span>{{ arts.description }}</span>
+             <div style="margin-top: 10px">
+            <span style="font-size: 30px">原文</span>
+              <span>{{ arts.content }}</span>
+             </div>
+         </div>
+</div>
+
+
+{% endblock %}

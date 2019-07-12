@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <style>
+
+
+    </style>
+
+{% endblock %}
+{% block content %}
+ <div id="templatemo_main">
+    	<div class="cbox_fw1">
+             <p style="font-size: 30px">图册</p>
+
+            {% for i in pict %}
+
+                <a href="#" class="a">
+                 <img src="/static/{{ i.picture }}" alt="Image 1" class="image_frame" style="margin: 5px"/>
+
+                </a>
+            {% endfor %}
+{#           </ul>#}
+        </div>
+ </div>
+{% endblock %}
+{% block script %}
+<script>
+$(function () {
+    $('.a').mouseenter(function () {
+        $(this).children().css('opacity',1).parents().siblings('a').children('img').css('opacity',0.4)
+    });
+    $('.cbox_fw1').mouseleave(function () {
+        $(this).children('a').children().css('opacity',1)
+    })
+})
+</script>
+{% endblock %}

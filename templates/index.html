@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    个人博客-主页
+{% endblock %}
+{% block content %}
+    <div id="templatemo_main">
+    	<div class="cbox_fw">
+        	<h2>{{ article.title }}</h2>
+            <a href="#"><img src="/static/{{ article.image }}" alt="image" class="image_fram image_fl" /></a>
+             <p>{{ article.description }}</p>
+			<a href="/article/1/" class="more float_r"><span>&gt;&gt;</span> 更多</a>
+            <div class="cleaner"></div>
+        </div>
+        <div id="sidebar">
+
+        	<div id="nne">
+
+	        	<h3>最新留言</h3>
+                <ul class="nne_box">
+                    {% for i in message %}
+                	<li><span>{{ i.time}}</span><a href="#">{{ i.message}}</a></li>
+                   {% endfor %}
+                </ul>
+
+			</div>
+
+            <div >
+                <div id="zan" onclick="hello()" class='more' style="font-size: 20px; margin-left: 40px;font-family: 微软雅黑">支持一下
+                </div>
+
+                <img src="/static/images/sq.jpg" alt="" id='sq' style="width: 150px;height: 150px;display: none;" >
+
+            </div>
+
+        </div>
+
+        <div id="content">
+        	<div class="cbox_fws">
+                <h3>精彩人生</h3>
+                {% for j in article1 %}
+                <div class="cbox_w280 float_l"> <a href="#"><img src=" /static/{{ j.image }}" alt="image" class="image_frame" /></a>
+                  <div style="text-overflow:ellipsis;overflow: hidden;white-space: nowrap">{{ j.content }}</div>
+                    <a href="/articlelist/1/" class="more float_r"><span>&gt;&gt;</span> 更多</a>
+
+                </div>
+                {% endfor %}
+
+                 {% for k in article2 %}
+                <div class="cbox_w280 float_l"> <a href="#"><img src="/static/{{ k.image }}" alt="image" class="image_frame" /></a>
+                    <div style="text-overflow: ellipsis;overflow: hidden;white-space: nowrap">{{ k.content }}</div>
+                    <a href="/articlelist/2/" class="more float_r"><span>&gt;&gt;</span> 更多</a>
+                    <div class="cleaner"></div>
+                </div>
+                 {% endfor %}
+                    <div class="cleaner"></div>
+            </div>
+               <div class="cbox_last">
+            	<h3>图册</h3>
+                <ul class="photo_gallery">
+                    {% for pic in picture %}
+                	<li><a href="#"><img src="/static/{{ pic.picture }}" alt="Image 1" class="image_frame1" /></a></li>
+                    {% endfor %}
+                </ul>
+                <div class="cleaner"></div>
+                <p><a href="/pictures/" class="more float_r"><span>&gt;&gt;</span> 所有</a></p>
+            </div>
+
+
+        </div>
+
+        <div class="cleaner"></div>
+     </div>
+
+
+{% endblock %}
+{% block script %}
+    <script src="/static/js/jquery.min.js"></script>
+    <script>
+         function hello() {
+
+             $('#sq').toggle();
+
+         }
+    </script>
+
+{% endblock  %}

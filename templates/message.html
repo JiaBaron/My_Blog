@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    个人博客-留言板
+{% endblock %}
+
+{% block content %}
+     <div id="templatemo_main">
+
+    	<div class="cbox_fw1">
+            <form action="" method="post">
+                {% csrf_token %}
+              <table cellspacing="0">
+                  <thead>
+                      <th >昵称</th>
+                      <th >留言内容</th>
+                  </thead>
+                  <tbody>
+                     <tr>
+                         <td ><input type="text" placeholder="请输入昵称" name="name" style="width:350px;height: 100px;background-color: blanchedalmond"></td>
+                         <td ><input  placeholder="请输入留言内容" name="message" style="width:350px;height: 100px;background-color: blanchedalmond"></td>
+                     </tr>
+                   <tr>
+                 <td colspan="2"><div style="margin-left: 300px"><input type="submit" value="提交"></div><span style="color: red">{{ data }}</span></td>
+                  </tr>
+                  </tbody>
+              </table>
+
+            </form>
+                <div class="cleaner"></div>
+        </div>
+
+     </div>
+
+
+{% endblock %}

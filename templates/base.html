@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{% block title %}个人博客{% endblock %}</title>
+<meta name="keywords" content="ancient, free css templates, CSS, HTML" />
+<meta name="description" content="Ancient is a free CSS template from www.cssmoban.com" />
+<link href="{% static 'templatemo_style.css' %}" rel="stylesheet" type="text/css" />
+
+ <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <style type="text/css">
+
+            #ul2 li{
+            margin: 0;
+            padding: 0;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+
+            }
+            #ul1{
+                padding: 0;
+                background-color: black;
+            }
+            #ul1>li{
+                text-align: center;
+                line-height: 75px;
+                padding: 0;
+                display: block;
+                float: left;
+                width: 164px;
+                height: 75px;
+                font-size:20px;
+            }
+            #ul2{
+                display: none;
+            }
+        #ul2 li a{
+            width: 100px;
+
+            text-align: center;
+            line-height: 75px;
+        }
+
+    </style>
+
+{% block style %}
+{% endblock %}
+</head>
+<body>
+
+<div id="templatemo_wrapper">
+
+	<span class="bg_top"></span>
+    <span class="bg_bottom"></span>
+
+	<div id="templatemo_menu">
+        <ul id="ul1">
+          <li><a href="/" >主页</a></li>
+          <li><a href="javascript:void(0)" id="bb" >博客</a>
+              <ul id="ul2" >
+                  <li><a href="/articlelist/1/" >人生格言</a></li>
+                  <li><a href="/articlelist/2/" >程序人生</a></li>
+                  <li><a href="/articlelist/3/">美文摘抄</a></li>
+              </ul>
+
+
+
+
+          </li>
+
+          <li><a href="/pictures/" >图册</a></li>
+          <li><a href="/message/" >留言板</a></li>
+          <li class="last"><a href="/contactme/" >联系我</a></li>
+        </ul>
+	</div> <!-- end of menu -->
+
+    <div id="templatemo_header">
+		<div id="site_title"><h1><a href="/contactme/">砌玉成璧</a></h1></div>
+        <div id="social">
+        	<a href="/contactme/"><img src="{% static 'images/templatemo_icon_01.png' %}" alt="twitter" /></a>
+            <a href="/message/"><img src="{% static 'images/templatemo_icon_02.png' %}" alt="RSS" /></a>
+            <a href="/message/"><img src="{% static 'images/templatemo_icon_03.png' %}" alt="contact" /></a>
+		</div>
+
+	</div> <!-- end of header -->
+
+    {% block content %}
+
+
+    {% endblock %}
+    <div id="templatemo_main_bottom"></div>
+
+    <div id="templatemo_footer">
+        Copyright © 2019 |@砌玉成璧|Designed By BaronJia
+
+        <div class="cleaner"></div>
+    </div>
+
+</div> <!-- end of wrapper -->
+
+</body>
+</html>
+
+
+
+    <script type="text/javascript">
+          $(document).ready(function () {
+
+              $('#ul1 li:eq(1)').mouseenter(function () {
+
+                 $(this).children('ul').show(1000).stop(true,true)
+              });
+               $('#ul1 li:eq(1)').mouseleave(function () {
+                 $(this).children('ul').hide(1000).stop(true,true)
+              });
+          })
+    </script>
+{% block script %}
+{% endblock %}
